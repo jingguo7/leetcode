@@ -1,10 +1,11 @@
 1. How to take notes for leetcode?
 
 - in iterm
-
 1) run
 
 cd /Users/steve/Desktop/jing_career/leetcode
+
+# cd: change directory
 
 2) run
 
@@ -23,7 +24,7 @@ subl leetcode_notes.sql
 
 git status
 
-to ensure if the contents has been changed.
+# to ensure if the contents has been changed.
 
 7) run
 
