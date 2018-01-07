@@ -1,0 +1,38 @@
+1. How to take notes for leetcode?
+
+- in iterm
+
+1) run
+
+cd /Users/steve/Desktop/jing_career/leetcode
+
+2) run
+
+git pull
+
+3) run
+subl leetcode_notes.sql
+
+- in sublime
+4) add notes in leetcode_notes.sql file
+
+5) save
+
+- in iterm
+6) run
+
+git status
+
+to ensure if the contents has been changed.
+
+7) run
+
+git add -A
+
+8) run
+
+git commit -m "add new notes"
+
+9) run
+
+git push origin master
