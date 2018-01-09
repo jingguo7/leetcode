@@ -28,3 +28,10 @@ ON Person.PersonId = Address. PersonId
 SELECT a.Name AS Employee FROM Employee a 
 INNER JOIN Employee b ON a.ManagerId=b.Id
 WHERE a.Salary > b.Salary
+
+# 183. Customers Who Never Order - https://leetcode.com/problems/customers-who-never-order/description/
+SELECT Customers.Name AS Customers
+FROM Customers 
+LEFT JOIN Orders 
+ON Customers.Id = Orders.CustomerId
+WHERE Orders.CustomerId IS NULL
