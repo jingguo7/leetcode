@@ -35,3 +35,10 @@ FROM Customers
 LEFT JOIN Orders 
 ON Customers.Id = Orders.CustomerId
 WHERE Orders.CustomerId IS NULL
+
+#197. Rising Temperature - https://leetcode.com/problems/rising-temperature/description/
+# new knowledge: SUBDATE
+SELECT W1.Id FROM Weather W1
+LEFT JOIN Weather W2 ON SUBDATE(W1.Date,1) = W2.Date
+WHERE W1.Temperature > W2.Temperature 
+
