@@ -17,3 +17,10 @@ ORDER BY rating DESC
 SELECT Email FROM Person
 GROUP BY Email
 HAVING COUNT(*)>1
+
+# 175. COMBINE TWO TABLES - https://leetcode.com/problems/combine-two-tables/description/
+# left join
+SELECT Person.FirstName, Person.LastName, Address.City, Address.State FROM Person
+LEFT JOIN Address 
+ON Person.PersonId = Address. PersonId
+
