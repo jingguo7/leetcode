@@ -42,3 +42,10 @@ SELECT W1.Id FROM Weather W1
 LEFT JOIN Weather W2 ON SUBDATE(W1.Date,1) = W2.Date
 WHERE W1.Temperature > W2.Temperature 
 
+#596. Classes More Than 5 Students - https://leetcode.com/problems/classes-more-than-5-students/description/
+SELECT class FROM courses
+GROUP BY class
+HAVING COUNT(DISTINCT student) >= 5
+# NOTES: 有>= 2个或以上的类别的数据先要group by再 count，不然程序不明白你要它count什么。
+
+
