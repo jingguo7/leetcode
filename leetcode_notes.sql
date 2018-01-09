@@ -11,3 +11,9 @@ SELECT name, population, area FROM World
 SELECT * FROM cinema 
 WHERE (id % 2) <> 0 AND description <>'boring'
 ORDER BY rating DESC
+
+# 182 Duplicate Email - https://leetcode.com/problems/duplicate-emails/description/
+# Delete duplicate values
+SELECT Email FROM Person
+GROUP BY Email
+HAVING COUNT(*)>1
