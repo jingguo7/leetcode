@@ -24,3 +24,7 @@ SELECT Person.FirstName, Person.LastName, Address.City, Address.State FROM Perso
 LEFT JOIN Address 
 ON Person.PersonId = Address. PersonId
 
+# 181. Employees Earning More Than Their Managers - https://leetcode.com/problems/employees-earning-more-than-their-managers/description/
+SELECT a.Name AS Employee FROM Employee a 
+INNER JOIN Employee b ON a.ManagerId=b.Id
+WHERE a.Salary > b.Salary
