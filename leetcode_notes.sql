@@ -48,4 +48,17 @@ GROUP BY class
 HAVING COUNT(DISTINCT student) >= 5
 # NOTES: 有>= 2个或以上的类别的数据先要group by再 count，不然程序不明白你要它count什么。
 
+#176. Second Highest Salary - https://leetcode.com/problems/second-highest-salary/description/
+SELECT MAX(Salary) AS SecondHighestSalary FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee)
+
+* # 196. Delete Duplicate Emails - https://leetcode.com/problems/delete-duplicate-emails/description/
+DELETE FROM Person
+WHERE Id NOT IN (
+  SELECT * FROM (
+    SELECT Min(Id)
+    FROM Person
+    GROUP BY Email
+   ) Tmp
+)
 
