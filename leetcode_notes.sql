@@ -73,5 +73,21 @@ END) AS id, student
 FROM seat, (select count(*) as records from seat) as seat_records
 ORDER BY id asc;
 
+#178. Rank Scores - https://leetcode.com/problems/rank-scores/description/
+SELECT
+  Score,
+  (SELECT count(distinct Score) FROM Scores WHERE Score >= s.Score) Rank
+FROM Scores s
+ORDER BY Score desc
 
+#180. Consecutive Numbers - https://leetcode.com/problems/consecutive-numbers/discuss/
+select DISTINCT num AS ConsecutiveNums FROM
+(select num,
+  case 
+    when @record = num then @count:=@count+1
+    when @record <> @record:=num then @count:=1 end as n
+    from 
+      Logs ,(select @count:=0,@record:=(SELECT num from Logs limit 0,1)) r
+) a
+where a.n>=3
 
