@@ -62,3 +62,16 @@ WHERE Id NOT IN (
    ) Tmp
 )
 
+#####Medium
+
+#626. Exchange Seats - https://leetcode.com/problems/exchange-seats/description/
+SELECT (CASE 
+    WHEN mod(id, 2) != 0 and records != id THEN id + 1
+    WHEN mod(id, 2) != 0 and records = id THEN id
+    ELSE id - 1
+END) AS id, student
+FROM seat, (select count(*) as records from seat) as seat_records
+ORDER BY id asc;
+
+
+
